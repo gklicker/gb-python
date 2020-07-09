@@ -4,3 +4,10 @@
 минуты и секунды и выведите в формате чч:мм:сс. Используйте форматирование строк.
 """
 
+sec = int(input("Время в секундах: "))
+minutes = sec // 60
+sec = sec % 60
+hour = minutes // 60
+minutes = minutes % 60
+
+print("{:2}:{:2}:{:2}".format(hour, minutes, sec))
