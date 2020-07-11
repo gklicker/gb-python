@@ -4,3 +4,19 @@
 с индексами 0 и 1, 2 и 3 и т.д. При нечетном количестве элементов последний сохранить на своем месте.
 Для заполнения списка элементов необходимо использовать функцию input().
 """
+
+input_string = input("Введите числа, используя пробел в качестве разделителя. ")
+the_list = input_string.split(" ")
+
+# Удаляем элементы содержащие пустую строку
+for i in range(the_list.count("")):
+    the_list.remove("")
+
+print("Ваш список: {}".format(the_list))
+
+for i in range(0, len(the_list) // 2):
+    tmp = the_list[2 * i]
+    the_list[2 * i] = the_list[2 * i + 1]
+    the_list[2 * i + 1] = tmp
+
+print("Ваш список после обмена соседних элементов: {}".format(the_list))
