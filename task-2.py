@@ -15,8 +15,6 @@ for i in range(the_list.count("")):
 print("Ваш список: {}".format(the_list))
 
 for i in range(0, len(the_list) // 2):
-    tmp = the_list[2 * i]
-    the_list[2 * i] = the_list[2 * i + 1]
-    the_list[2 * i + 1] = tmp
+    the_list[2 * i], the_list[2 * i + 1] = the_list[2 * i + 1], the_list[2 * i]
 
 print("Ваш список после обмена соседних элементов: {}".format(the_list))
