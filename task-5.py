@@ -10,3 +10,17 @@
 Пользователь ввел число 1. Результат: 7, 5, 3, 3, 2, 1.
 Набор натуральных чисел можно задать непосредственно в коде, например, my_list = [7, 5, 3, 3, 2].
 """
+
+my_list = [7, 5, 3, 3, 2]
+
+number = int(input("Введите число "))
+
+if my_list[-1] > number:
+    my_list.append(number)
+else:
+    for i in range(len(my_list)):
+        if number >= my_list[i]:
+            my_list.insert(i, number)
+            break
+
+print(my_list)
