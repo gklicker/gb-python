@@ -20,3 +20,47 @@
     “ед”: [“шт.”]
 }
 """
+
+items = []
+
+properties = {
+    "название": [],
+    "цена": [],
+    "количество": [],
+    "ед": []
+}
+
+item_index = 1
+
+print("Введите название, цену, кол-во, ед. измерения через пробел. \n"
+      + " Для заверения ввеода оставте пустую строку и нажмиье Enter")
+
+while True:
+    input_string = input()
+    item = input_string.split(" ")
+
+    # Удаляем элементы содержащие пустую строку
+    for i in range(item.count("")):
+        item.remove("")
+
+    if len(item) == 0:
+        break
+
+    if len(item) != 4:
+        continue
+
+    items.append((item_index, {
+        "название": item[0],
+        "цена": item[1],
+        "количество": item[2],
+        "ед": item[3]
+    }))
+
+    item_index += 1
+
+for item in items:
+    for key, value in item[1].items():
+        properties[key].append(value)
+
+print("Введённые данные {}".format(items))
+print("Словарь {}".format(properties))
