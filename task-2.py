@@ -10,4 +10,4 @@ def my_join(fname, lname, byear, cyear, email, phone):
     return "{}, {}, {}, {}, {}, {}".format(fname, lname, byear, cyear, email, phone)
 
 
-print(my_join("Иван", "Иванов", 1989, 2020, "a@a.ru", "89000000000"))
+print(my_join(fname="Иван", lname="Иванов", byear=1989, cyear=2020, email="a@a.ru", phone="89000000000"))
