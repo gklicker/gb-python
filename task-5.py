@@ -7,3 +7,16 @@
 Если специальный символ введен после нескольких чисел,
 то вначале нужно добавить сумму этих чисел к полученной ранее сумме и после этого завершить программу.
 """
+
+sum = int(0)
+
+while True:
+    input_string = input("Введите строку чисел ")
+    list1 = input_string.split()
+    try:
+        for element in list1:
+            sum += float(element)
+    except ValueError:
+        break
+    print("Общая сумма равна {}".format(sum))
+print("Общая сумма равна {}".format(sum))
