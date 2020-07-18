@@ -7,13 +7,15 @@
 
 # Определяем фун-цию нахождения частного
 def div(a, b):
-    return a / b
+    try:
+        return a / b
+    except ZeroDivisionError:
+        print("На ноль делить нельзя!")
+        return ""
+
 
 
 dividend = float(input("Делимое "))
 divider = float(input("Делитель "))
 
-if not divider:
-    print("На ноль делить нельзя!")
-else:
-    print("Частное {}".format(div(dividend, divider)))
+print("Частное {}".format(div(dividend, divider)))
