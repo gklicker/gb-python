@@ -6,7 +6,7 @@
 
 
 def my_func(a, b, c):
-    return max(a, b) + max(min(a, b), c)
+    return max(max(a,b),c)
 
 
 print(my_func(2, 7, 1))
