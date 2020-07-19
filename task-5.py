@@ -5,3 +5,10 @@
 Необходимо получить результат вычисления произведения всех элементов списка.
 Подсказка: использовать функцию reduce().
 """
+
+import functools as ft
+
+print(ft.reduce(
+    lambda prev, curr: prev * curr,
+    [i for i in range(100, 1000) if not i % 2]
+))
