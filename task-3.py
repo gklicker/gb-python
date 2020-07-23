@@ -8,3 +8,16 @@
 Иванов 23543.12
 Петров 13749.32
 """
+
+sum = 0
+count = 0
+
+with open(file="account.txt", mode="r", encoding="utf-8") as fo:
+    for line in fo:
+        name, income = line.split()
+        income = float(income)
+        count += 1
+        sum += income
+        if income < 20000:
+            print("У сотрудника {} ЗП меньше 20к ({})".format(name, income))
+print("Средняя ЗП {}".format(sum / count))
