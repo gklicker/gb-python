@@ -10,5 +10,27 @@
 Пример словаря: {“Информатика”: 170, “Физика”: 40, “Физкультура”: 30}
 """
 
+import re
+import locale
 
 
+
+locale.setlocale(locale.LC_ALL, "ru_RU")
+exp = re.compile(r'(\w+)\:\s+(((\d{1,})\(\w+\)|—)\s+)(((\d{1,})\(\w+\)|—)\s+)(((\d{1,})\(\w+\)|—)).?')
+
+dict = {}
+
+with open(file="task-6.txt", mode="r") as of:
+    for line in of:
+        res = exp.match(line)
+        sum = 0
+        if len(res.groups()) == 10:
+            if not res.group(4) is None:
+                sum += int(res.group(4))
+            if not res.group(7) is None:
+                sum += int(res.group(7))
+            if not res.group(10) is None:
+                sum += int(res.group(10))
+        dict[res.group(1)] = sum
+
+print("Cловаря: ", dict)
