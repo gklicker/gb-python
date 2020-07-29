@@ -9,3 +9,27 @@
 Задачу можно усложнить, реализовав проверку порядка режимов,
 и при его нарушении выводить соответствующее сообщение и завершать скрипт.
 """
+
+
+import itertools
+import time
+
+
+class TrafficLight:
+
+    __lights = {"красный": 7, "желтый": 2, "зеленый": 7}
+
+    def __gen_cycle(self):
+        for c in itertools.cycle(["красный", "желтый", "зеленый"]):
+            yield self.__lights[c]
+
+    __color = None
+
+    def running(self):
+        for self.__color in itertools.cycle(["красный", "желтый", "зеленый"]):
+            print("Текущий цвет: {}".format(self.__color))
+            time.sleep(self.__lights[self.__color])
+
+
+trafficLight1 = TrafficLight()
+trafficLight1.running()
