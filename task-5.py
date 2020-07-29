@@ -7,3 +7,28 @@
 Для каждого из классов метод должен выводить уникальное сообщение. Создать экземпляры классов и проверить,
 что выведет описанный метод для каждого экземпляра.
 """
+
+class Stationery:
+    title = None
+
+    def draw(self):
+        print("Запуск отрисовки. Объект {}".format(self.title))
+
+class Pen(Stationery):
+    title = "ручка"
+
+class Pencil(Stationery):
+    title = "карандаш"
+
+class Handle(Stationery):
+    title = "маркер"
+
+
+A = Pen()
+A.draw()
+
+B = Pencil()
+B.draw()
+
+C = Handle()
+C.draw()
